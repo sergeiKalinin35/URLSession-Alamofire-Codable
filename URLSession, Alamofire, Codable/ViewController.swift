@@ -114,18 +114,54 @@ class MainViewController: UICollectionViewController {
 extension MainViewController {
     
     private func exampleOneButtonPressed() {
+        guard let url = URL(string: URLExamples.exampleOne.rawValue) else { return }
+              
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+          //  if let error = error {
+          //      print(error)
+           //     return
+          //  }
+            
+            guard let data = data else { return }
+            
+            
+            // обработка джейсона на ошибку
+            do {
+                
+                let course = try JSONDecoder().decode(Course.self, from: data)
+                print(course)
+                
+            } catch let error {
+                print(error)
+                
+            }
+            
+    } .resume()
         
     }
     
     private func exampleTwoButtonPressed() {
+        guard let url = URL(string: URLExamples.exampleTwo.rawValue) else { return }
+        
+        
+        
         
     }
     
     private func exampleThreeButtonPressed() {
+        guard let url = URL(string: URLExamples.exampleThree.rawValue) else { return }
+        
+        
+        
         
     }
     
     private func exampleFourButtonPressed() {
+        guard let url = URL(string: URLExamples.exampleFour.rawValue) else { return }
+        
+        
+        
         
     }
     
