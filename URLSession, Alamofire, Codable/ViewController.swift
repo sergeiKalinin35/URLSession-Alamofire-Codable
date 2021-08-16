@@ -131,39 +131,124 @@ extension MainViewController {
                 
                 let course = try JSONDecoder().decode(Course.self, from: data)
                 print(course)
+                DispatchQueue.main.async {
+                    self.successAlert()
+                }
                 
             } catch let error {
                 print(error)
-                
+                DispatchQueue.main.async {
+                    self.failedAlert()
+                }
             }
             
     } .resume()
         
     }
     
+    // массив джейсон
     private func exampleTwoButtonPressed() {
         guard let url = URL(string: URLExamples.exampleTwo.rawValue) else { return }
         
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+          //  if let error = error {
+          //      print(error)
+           //     return
+          //  }
+            
+            guard let data = data else { return }
+            
+            
+            // обработка джейсона на ошибку
+            do {
+                
+                let courses = try JSONDecoder().decode([Course].self, from: data)
+                print(courses)
+                DispatchQueue.main.async {
+                    self.successAlert()
+                }
+                
+            } catch let error {
+                print(error)
+                DispatchQueue.main.async {
+                    self.failedAlert()
+                }
+            }
+            
+    } .resume()
+        
         
         
         
     }
-    
+    //новая модель с тремя типами//создаем данные для него
     private func exampleThreeButtonPressed() {
         guard let url = URL(string: URLExamples.exampleThree.rawValue) else { return }
         
-        
-        
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+          //  if let error = error {
+          //      print(error)
+           //     return
+          //  }
+            
+            guard let data = data else { return }
+            
+            
+            // обработка джейсона на ошибку
+            do {
+                
+                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
+                print(websiteDescription)
+                DispatchQueue.main.async {
+                    self.successAlert()
+                }
+                
+            } catch let error {
+                print(error)
+                DispatchQueue.main.async {
+                    self.failedAlert()
+                }
+            }
+            
+    } .resume()
         
     }
-    
+    //битый джейсон
     private func exampleFourButtonPressed() {
         guard let url = URL(string: URLExamples.exampleFour.rawValue) else { return }
         
+        URLSession.shared.dataTask(with: url) { (data, _, _) in
+            
+          //  if let error = error {
+          //      print(error)
+           //     return
+          //  }
+            
+            guard let data = data else { return }
+            
+            
+            // обработка джейсона на ошибку
+            do {
+                
+                let websiteDescription = try JSONDecoder().decode(WebsiteDescription.self, from: data)
+                print(websiteDescription)
+                DispatchQueue.main.async {
+                    self.successAlert()
+                }
+                
+            } catch let error {
+                print(error)
+                DispatchQueue.main.async {
+                    self.failedAlert()
+                }
+            }
+            
+    } .resume()
         
         
-        
-    }
+        }
     
 }
 

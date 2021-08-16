@@ -15,7 +15,11 @@ struct Course: Decodable {
 }
 
 
-
+struct WebsiteDescription: Decodable {
+    let courses: [Course]?
+    let websiteDescription: String?
+    let websiteName: String?
+}
 
 
 
