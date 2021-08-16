@@ -16,6 +16,8 @@ class ImageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        fetchImage()
+        
       //ромашка
         activityIndicator.startAnimating()
         activityIndicator.hidesWhenStopped = true
@@ -38,19 +40,13 @@ class ImageViewController: UIViewController {
             }
             
             if let data = data, let image = UIImage(data: data) {
-                self.imageView.image = image
-                print(data)
-                return
+                DispatchQueue.main.async {
+                    self.imageView.image = image
+                    self.activityIndicator.stopAnimating()
+                }
             }
-            
-            
-            
         }.resume() // запуск задачи
         // completionHandler ответ от сервера
-        
-        
-        
-        
     }
 
 }
