@@ -81,8 +81,13 @@ class MainViewController: UICollectionViewController {
         }
         
     }
-    
-    
+    // подготовка экрана к переходу в таблицу
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showCourses" {
+            let coursesVC = segue.destination as! CoursesViewController
+            coursesVC.fetchCourses()
+        }
+    }
     
     private func successAlert() {
         let alert = UIAlertController(title: "Success",

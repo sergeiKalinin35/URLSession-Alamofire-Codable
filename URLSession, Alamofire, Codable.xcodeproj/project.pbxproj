@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F40ADE0626CB3238000B9355 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ADE0526CB3238000B9355 /* CoursesViewController.swift */; };
+		F40ADE0826CB3677000B9355 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ADE0726CB3677000B9355 /* CourseCell.swift */; };
 		F4B2D2D626C9454200D52B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D2D526C9454200D52B06 /* AppDelegate.swift */; };
 		F4B2D2D826C9454200D52B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D2D726C9454200D52B06 /* SceneDelegate.swift */; };
 		F4B2D2DA26C9454200D52B06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D2D926C9454200D52B06 /* ViewController.swift */; };
@@ -19,6 +21,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F40ADE0526CB3238000B9355 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
+		F40ADE0726CB3677000B9355 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		F4B2D2D226C9454200D52B06 /* URLSession, Alamofire, Codable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "URLSession, Alamofire, Codable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4B2D2D526C9454200D52B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4B2D2D726C9454200D52B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +50,8 @@
 		F4B2D2C926C9454200D52B06 = {
 			isa = PBXGroup;
 			children = (
+				F40ADE0526CB3238000B9355 /* CoursesViewController.swift */,
+				F40ADE0726CB3677000B9355 /* CourseCell.swift */,
 				F4F5DBD526CAED5300820626 /* Course.swift */,
 				F4B2D2D426C9454200D52B06 /* URLSession, Alamofire, Codable */,
 				F4B2D2D326C9454200D52B06 /* Products */,
@@ -147,8 +153,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F4F5DBD626CAED5300820626 /* Course.swift in Sources */,
+				F40ADE0626CB3238000B9355 /* CoursesViewController.swift in Sources */,
 				F4B2D2EC26C9799700D52B06 /* UserActionCell.swift in Sources */,
 				F4B2D2DA26C9454200D52B06 /* ViewController.swift in Sources */,
+				F40ADE0826CB3677000B9355 /* CourseCell.swift in Sources */,
 				F4B2D2EE26C985EC00D52B06 /* ImageViewController.swift in Sources */,
 				F4B2D2D626C9454200D52B06 /* AppDelegate.swift in Sources */,
 				F4B2D2D826C9454200D52B06 /* SceneDelegate.swift in Sources */,
