@@ -83,23 +83,48 @@ class MainViewController: UICollectionViewController {
         case .exampleThree: exampleThreeButtonPressed()
         case .exampleFour: exampleFourButtonPressed()
         case .ourCourses: performSegue(withIdentifier: "showCourses", sender: nil)
-            
         case .postRequest: postRequest()
-         
-        case .alamofireGet:
-            break
-        case .alamofirePost:
-            break
+        case .alamofireGet: performSegue(withIdentifier: "alamofireGet", sender: nil)
+        case .alamofirePost: performSegue(withIdentifier: "alamofirePost", sender: nil)
+        
         }
         
     }
-    // подготовка экрана к переходу в таблицу
+    
+    
+    // Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showCourses" {
+        if segue.identifier != "ShowImage" {
             let coursesVC = segue.destination as! CoursesViewController
-            coursesVC.fetchCourses()
+            switch segue.identifier {
+            case "showCourses": coursesVC.fetchCourses()
+            case "alamofireGet": coursesVC.alamofireGetButtonPressed()
+            case "alamofirePost": coursesVC.alamofirePostButtonPresssed()
+                
+            default:
+                break
+            }
         }
     }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    // подготовка экрана к переходу в таблицу
+ //   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+  //      if segue.identifier == "showCourses" {
+   //         let coursesVC = segue.destination as! CoursesViewController
+   //         coursesVC.fetchCourses()
+   //     }
+  //  }
     
     private func successAlert() {
         let alert = UIAlertController(title: "Success",
@@ -306,7 +331,18 @@ extension MainViewController {
             
         }.resume()
     }
+    
+ 
+    
+    
 }
+
+
+
+
+
+
+
 
 
 // настройка ячейки в коде

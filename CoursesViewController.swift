@@ -75,4 +75,20 @@ extension CoursesViewController {
     } .resume()
         
     }
+    
+    func alamofireGetButtonPressed() {
+        
+    }
+    
+    
+    
+ func  alamofirePostButtonPresssed() {
+        
+    }
+    
+    
+    
+    
+    
+    
 }
