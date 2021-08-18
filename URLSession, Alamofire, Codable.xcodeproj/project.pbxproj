@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D2E366EB38E69457F5271FA /* Pods_URLSession__Alamofire__Codable.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA2D1A55FD9FFFBF5CB8CC66 /* Pods_URLSession__Alamofire__Codable.framework */; };
 		F40ADE0626CB3238000B9355 /* CoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ADE0526CB3238000B9355 /* CoursesViewController.swift */; };
 		F40ADE0826CB3677000B9355 /* CourseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F40ADE0726CB3677000B9355 /* CourseCell.swift */; };
 		F4B2D2D626C9454200D52B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4B2D2D526C9454200D52B06 /* AppDelegate.swift */; };
@@ -21,6 +22,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3497E263E8BA1A75E8156E9C /* Pods-URLSession, Alamofire, Codable.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLSession, Alamofire, Codable.debug.xcconfig"; path = "Target Support Files/Pods-URLSession, Alamofire, Codable/Pods-URLSession, Alamofire, Codable.debug.xcconfig"; sourceTree = "<group>"; };
+		BA2D1A55FD9FFFBF5CB8CC66 /* Pods_URLSession__Alamofire__Codable.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_URLSession__Alamofire__Codable.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E8E79E9A12246CE754B8E4E1 /* Pods-URLSession, Alamofire, Codable.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-URLSession, Alamofire, Codable.release.xcconfig"; path = "Target Support Files/Pods-URLSession, Alamofire, Codable/Pods-URLSession, Alamofire, Codable.release.xcconfig"; sourceTree = "<group>"; };
 		F40ADE0526CB3238000B9355 /* CoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoursesViewController.swift; sourceTree = "<group>"; };
 		F40ADE0726CB3677000B9355 /* CourseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseCell.swift; sourceTree = "<group>"; };
 		F4B2D2D226C9454200D52B06 /* URLSession, Alamofire, Codable.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "URLSession, Alamofire, Codable.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -41,12 +45,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D2E366EB38E69457F5271FA /* Pods_URLSession__Alamofire__Codable.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55CAF73A8773F0942FDAC113 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BA2D1A55FD9FFFBF5CB8CC66 /* Pods_URLSession__Alamofire__Codable.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		769DF3B5ED2CE36777EDBD61 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3497E263E8BA1A75E8156E9C /* Pods-URLSession, Alamofire, Codable.debug.xcconfig */,
+				E8E79E9A12246CE754B8E4E1 /* Pods-URLSession, Alamofire, Codable.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		F4B2D2C926C9454200D52B06 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +78,8 @@
 				F4F5DBD526CAED5300820626 /* Course.swift */,
 				F4B2D2D426C9454200D52B06 /* URLSession, Alamofire, Codable */,
 				F4B2D2D326C9454200D52B06 /* Products */,
+				769DF3B5ED2CE36777EDBD61 /* Pods */,
+				55CAF73A8773F0942FDAC113 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,9 +114,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F4B2D2E626C9454300D52B06 /* Build configuration list for PBXNativeTarget "URLSession, Alamofire, Codable" */;
 			buildPhases = (
+				F5BA3258595A6A5A46F194DE /* [CP] Check Pods Manifest.lock */,
 				F4B2D2CE26C9454200D52B06 /* Sources */,
 				F4B2D2CF26C9454200D52B06 /* Frameworks */,
 				F4B2D2D026C9454200D52B06 /* Resources */,
+				9DCC2CB899D73F3F349D0750 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9DCC2CB899D73F3F349D0750 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLSession, Alamofire, Codable/Pods-URLSession, Alamofire, Codable-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-URLSession, Alamofire, Codable/Pods-URLSession, Alamofire, Codable-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-URLSession, Alamofire, Codable/Pods-URLSession, Alamofire, Codable-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F5BA3258595A6A5A46F194DE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-URLSession, Alamofire, Codable-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		F4B2D2CE26C9454200D52B06 /* Sources */ = {
@@ -303,6 +372,7 @@
 		};
 		F4B2D2E726C9454300D52B06 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3497E263E8BA1A75E8156E9C /* Pods-URLSession, Alamofire, Codable.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -322,6 +392,7 @@
 		};
 		F4B2D2E826C9454300D52B06 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E8E79E9A12246CE754B8E4E1 /* Pods-URLSession, Alamofire, Codable.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
