@@ -14,6 +14,8 @@ enum URLExamples: String {
     case exampleTwo = "https://swiftbook.ru//wp-content/uploads/api/api_courses"
     case exampleThree = "https://swiftbook.ru//wp-content/uploads/api/api_website_description"
     case exampleFour = "https://swiftbook.ru//wp-content/uploads/api/api_missing_or_wrong_fields"
+    case exampleFive = "https://swiftbook.ru//wp-content/uploads/api/api_courses_capital"
+    case postRequest = "https://jsonplaceholder.typicode.com/posts"// хранение данных на сервер // сервер сайта
 }
 
    enum UserActions: String, CaseIterable {
@@ -24,6 +26,10 @@ enum URLExamples: String {
     case exampleThree = "Example Three"
     case exampleFour = "Example Four"
     case ourCourses = "Our Courses"
+    case postRequest = "POST Request"
+    case alamofireGet = "Alamofire GET"
+    case alamofirePost = "Alamofire POST"
+                
     
 }
 
@@ -78,6 +84,12 @@ class MainViewController: UICollectionViewController {
         case .exampleFour: exampleFourButtonPressed()
         case .ourCourses: performSegue(withIdentifier: "showCourses", sender: nil)
             
+        case .postRequest: postRequest()
+         
+        case .alamofireGet:
+            break
+        case .alamofirePost:
+            break
         }
         
     }
@@ -255,6 +267,45 @@ extension MainViewController {
         
         }
     
+    private func postRequest() {
+        guard let url = URL(string: URLExamples.postRequest.rawValue) else { return }
+        let course = Course(
+            name: "Networking",
+            imageUrl: "https://swiftbook.ru/wp-content/uploads/sites/2/2018/08/notifications-course-with-background.png",
+            numberOflessons: "67",
+            numberOftests: "10"
+        )
+        guard  let courseData = try? JSONEncoder().encode(course) else { return }
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.httpBody = courseData
+        
+        
+        // выполняем сам запрос
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            
+            guard let response = response, let data = data else { return }
+            
+            
+            print(response)
+            
+            do {
+                let course = try JSONDecoder().decode(Course.self, from: data)
+                DispatchQueue.main.async {
+                    self.successAlert()
+                }
+                print(course)
+            } catch let error {
+                print(error)
+            }
+            
+            
+        }.resume()
+    }
 }
 
 

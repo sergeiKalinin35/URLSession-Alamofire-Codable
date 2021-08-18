@@ -47,8 +47,8 @@ class CoursesViewController: UITableViewController {
 // NETWORKING
 extension CoursesViewController {
     func fetchCourses() {
-
-        guard let url = URL(string: URLExamples.exampleTwo.rawValue) else { return }
+      //  guard let url = URL(string: URLExamples.exampleTwo.rawValue) else { return }
+        guard let url = URL(string: URLExamples.exampleFive.rawValue) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             
@@ -59,8 +59,9 @@ extension CoursesViewController {
             
             // обработка джейсона на ошибку
             do {
-                
-                self.courses = try JSONDecoder().decode([Course].self, from: data)
+                let decoder = JSONDecoder()
+            //    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                self.courses = try decoder.decode([Course].self, from: data)
                 
                 DispatchQueue.main.async {
                     self.tableView.reloadData()//перезагружает методы протокола

@@ -18,8 +18,11 @@ class CourseCell: UITableViewCell {
     // создаем публичный метод для передачи оутлетов
      func configure(with course: Course) {
         courseNameLabel.text = course.name
-        numberOfLesson.text = "Number of lessons: \(course.number_of_lessons ?? 0)"
-        numberOfTest.text = "Number of lessons: \(course.number_of_tests ?? 0)"
+  //      numberOfLesson.text = "Number of lessons: \(course.numberOflessons ?? 0)"
+   //     numberOfTest.text = "Number of lessons: \(course.numberOftests ?? 0)"
+        
+        numberOfLesson.text = "Number of lessons: \(course.numberOflessons ?? "0")"// post string type
+        numberOfTest.text = "Number of lessons: \(course.numberOftests ?? "0")"
         
         
         // загрузка картинки одной строкой
