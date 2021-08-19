@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class CoursesViewController: UITableViewController {
     
@@ -77,6 +78,19 @@ extension CoursesViewController {
     }
     
     func alamofireGetButtonPressed() {
+        
+        AF.request(URLExamples.exampleTwo.rawValue)
+       //  ручной метод парсить джейсон
+            .responseJSON { dataResponse in
+            guard let statusCode = dataResponse.response?.statusCode else { return }
+     
+               print("STATUS CODE: \(statusCode)")
+            }
+        
+        
+        
+        
+        
         
     }
     
